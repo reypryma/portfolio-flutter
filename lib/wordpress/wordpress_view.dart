@@ -1,55 +1,125 @@
+import 'dart:convert';
+import 'dart:html';
+import 'dart:ui' as ui;
+
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/wordpress/wordpress_card.dart';
-import 'package:provider/provider.dart';
-import 'package:wordpress_client/responses.dart';
+import 'package:http/http.dart' as http;
+import 'package:nb_utils/nb_utils.dart';
 
-import '../blog/blog_card.dart';
-import '../services/blog_services.dart';
-
-class WordpressView extends StatelessWidget {
+class WordpressView extends StatefulWidget {
   const WordpressView({Key? key}) : super(key: key);
-  static const title = 'Newest Post';
 
   @override
-  Widget build(BuildContext context) {
-    return FutureProvider(
-        create: (_) => getFutureWordpressBlog(),
-    initialData: [],
-    child: MobileDesktopViewBuilder(mobileView: WordpressMobileView(), desktopView: WordpressDesktopView()));
-  }
+  _WordpressViewState createState() => _WordpressViewState();
 }
 
-class WordpressDesktopView extends StatelessWidget {
-  const WordpressDesktopView({Key? key}) : super(key: key);
+class _WordpressViewState extends State<WordpressView> {
+  Future<List> getPosts() async {
+    var response = await http.get(
+      Uri.parse("https://sunaonako.my.id/apps-api/wp/v2/posts?_embed"),
+      headers: {
+        "Accept": "application/json",
+      },
+    );
+
+    return jsonDecode(response.body);
+  }
+
+  @override
+  void initState() {
+    getPosts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final articles = context.watch<List<Post>?>();
-    if (articles == null) return CircularProgressIndicator();
-    return DesktopViewBuilder(titleText: WordpressView.title, children: [
-      Row(
-        children: [
-          for(final article in articles!)
-            Container(
-
-            )
-        ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'BelajarFlutterApps',
+        ),
       ),
-      SizedBox(height: 100),
-    ],);
+      body: FutureBuilder(
+        future: getPosts(),
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          if (snapshot.hasData) {
+            return ListView.builder(
+                itemCount: snapshot.data.length,
+                itemBuilder: (context, index) {
+                  Map posts = snapshot.data[index];
+                  return Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          commonCacheImageWidget(
+                            posts['_embedded']['wp:featuredmedia'][0]['source_url'],
+                            // 'https://cdn.sunaonako.my.id/aruuploads/2022/05/Beginner-SQL-Server.png',
+                            250
+                          ),
+                          Text(
+                            posts['title']['rendered'],
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.blueAccent,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                });
+          }
+          return CircularProgressIndicator();
+        },
+      ),
+    );
   }
 }
 
+Widget commonCacheImageWidget(String? url, double height,
+    {double? width, BoxFit? fit}) {
+  if (url.validate().startsWith('http')) {
+    if (isMobile) {
+      return CachedNetworkImage(
+        placeholder:
+            placeholderWidgetFn() as Widget Function(BuildContext, String)?,
+        imageUrl: '$url',
+        height: height,
+        width: width,
+        fit: fit ?? BoxFit.cover,
+        errorWidget: (_, __, ___) {
+          return SizedBox(height: height, width: width);
+        },
+      );
+    } else {
+      return Image.network(url!,
+          height: height, width: width, fit: fit ?? BoxFit.cover);
+    }
+  } else {
+    return Image.asset(url!,
+        height: height, width: width, fit: fit ?? BoxFit.cover);
+  }
+}
 
-class WordpressMobileView extends StatelessWidget {
-  const WordpressMobileView({Key? key}) : super(key: key);
+Widget? Function(BuildContext, String) placeholderWidgetFn() =>
+    (_, s) => placeholderWidget();
+
+Widget placeholderWidget() => Image.asset('images/img.jpg', fit: BoxFit.cover);
+
+/*class MyImage extends StatelessWidget {
+  const MyImage({Key? key, required this.s}) : super(key: key);
+
+  final String s;
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ui.platformViewRegistry.registerViewFactory(
+      s,
+      (int _) => ImageElement()..src = s,
+    );
   }
-}
-
-
+}*/

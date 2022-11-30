@@ -36,8 +36,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
-  wp_json_api: ^3.2.0
-  wordpress_client: ^6.3.4
+  wordpress_api: ^1.2.0
+  cached_network_image: ^3.2.3
+  nb_utils: ^4.6.25
 
 dev_dependencies:
   flutter_test:
