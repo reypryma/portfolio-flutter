@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:wordpress_api/wordpress_api.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 const double kInitWidth = 1507;
