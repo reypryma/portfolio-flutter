@@ -78,18 +78,24 @@ class ArticleDesktopViewState extends State<ArticleDesktopView>
         childAspectRatio: 0.7,
       ), itemBuilder: (context, index) {
           return Container(
-            padding: EdgeInsets.symmetric(vertical: 16),
-            margin: EdgeInsets.symmetric(vertical: 8),
+            padding: EdgeInsets.all(16),
+            margin: EdgeInsets.symmetric(vertical: 16),
             decoration: BoxDecoration(borderRadius:  BorderRadius.all(radiusCircular(5)), color: context.cardColor),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                commonCacheImageWidget(authorImage, 55).cornerRadiusWithClipRRect(12)
+                commonCacheImageWidget(authorImage, 55).cornerRadiusWithClipRRect(50),
+                Text("${(articles[index].author)!.toUpperCase()}")
               ],
             ),
           );
       }));
   }
+
+  // String? getUserOfAuthor(int userID) {
+  //   User? authorInfo = client.getUser(userID) as User?;
+  //   return authorInfo != null ? 'Nakomin' : authorInfo!.name;
+  // }
 }
 
 
