@@ -208,12 +208,6 @@ class WordpressClient {
 
     Post p = new Post.fromMap(postMap as Map<String, dynamic>);
 
-    // Inject objects if requested
-//    if (injectObjects) {
-//      if (p.featuredMediaID != null && p.featuredMediaID > 0) {
-//        p.featuredMedia = await getMedia(p.featuredMediaID);
-//      }
-//    }
 
     return p;
   }
