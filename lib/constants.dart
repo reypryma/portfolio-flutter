@@ -9,6 +9,9 @@ final String apiUrl = "https://sunaonako.my.id/apps-api/wp/v2/";
 // WordpressClient client = new WordpressClient('https://travelsilami.my.id/', 'wp-json/wp/v2');
 // final api = WordPressAPI('site.com');
 
+
+
+
 Future<void> launchURL(String url, {bool forceWebView = false}) async {
   await launch(url, enableJavaScript: true, forceWebView: forceWebView).catchError((e) {
     throw '$url is not valid';

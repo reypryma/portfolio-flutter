@@ -7,4 +7,7 @@ class ColourAssets {
   static const Color yellow = Color.fromRGBO(255, 222, 89, 1);
 
   static const List<Color> all = [red, blue, green, yellow];
+
+  static const SVBodyWhite = Color(0xFF6F7F92);
+  static const SVBodyDark = Color(0xFFF5F5F5);
 }
