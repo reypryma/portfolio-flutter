@@ -12,6 +12,8 @@ import 'package:portfolio_flutter_web/skills/skills_view.dart';
 import 'package:portfolio_flutter_web/wordpress/wordpress_view.dart';
 import 'package:provider/provider.dart';
 
+import '../wordpress/article_view.dart';
+
 class PortfolioView extends StatefulWidget {
   const PortfolioView({
      Key? key,
@@ -69,7 +71,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
                 ProjectView(key: projectKey),
                 SkillsView(key: skillsKey),
                 ExperienceView(key: experienceKey),
-                WordpressView(key: blogKey),
+                ArticleContainer(key: blogKey),
                 FooterView(),
               ],
             ),
@@ -93,10 +95,6 @@ class NavigationItem {
 }
 
 double _getPosition(GlobalKey key) {
-/*  final RenderObject? renderBox = key.currentContext?.findRenderObject() as RenderBox;
-  final position = RenderBox.localToGlobal(Offset.zero);
-  final scrollOffset = position.dy;
-  return scrollOffset;*/
 
   final RenderBox containerRenderBox = key.currentContext!.findRenderObject() as RenderBox;
   final position = containerRenderBox.localToGlobal(Offset.zero);
