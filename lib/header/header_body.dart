@@ -44,7 +44,7 @@ class HeaderBody extends StatelessWidget {
 
           // color: Colors.redAccent,
           onPressed: () =>
-              launchUrl(Uri.parse('mailto:smith@example.org?subject=News&body=New%20plugin')),
+              launch(('mailto:smith@example.org?subject=News&body=New%20plugin')),
           child: Padding(
             padding: EdgeInsets.symmetric(
               vertical: isMobile ?? false ? 10 : 17,

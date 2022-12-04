@@ -9,7 +9,6 @@ import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
 import 'package:portfolio_flutter_web/portfolio/back_to_top_button.dart';
 import 'package:portfolio_flutter_web/project/project_view.dart';
 import 'package:portfolio_flutter_web/skills/skills_view.dart';
-import 'package:portfolio_flutter_web/wordpress/wordpress_view.dart';
 import 'package:provider/provider.dart';
 
 import '../wordpress/article_view.dart';

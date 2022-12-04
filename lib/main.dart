@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio_flutter_web/portfolio/portfolio_view.dart';
-import 'package:portfolio_flutter_web/wordpress/article_view.dart';
-import 'package:portfolio_flutter_web/wordpress/wordpress_view.dart';
 
 void main() {
   runApp(MyApp());

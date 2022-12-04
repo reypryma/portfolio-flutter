@@ -77,6 +77,10 @@ String removeAllHtmlTags(String htmlText) {
 }
 
 String convertDate(String dateText) {
-  final date = DateFormat('EEE, dd MMM yyyy HH:mm:ss zzz').parse(dateText);
-  return DateFormat('d MMMM yyyy').format(date);
+  // final date = DateFormat('EEE, yyyy-dd-MMM HH:mm:ss zzz').parse(dateText);
+  final parsedDate = DateTime.parse(dateText);
+  var newFormat = DateFormat("d MMMM yyyy");
+  String updatedDt = newFormat.format(parsedDate);
+  // final date = DateFormat('1974-03-20 00:00:00.000').parse(parsedDate.toString());
+  return updatedDt;
 }

@@ -13,7 +13,7 @@ class ExperienceContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = ColourAssets.all;
+    final colors = ColorAsset.all;
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(

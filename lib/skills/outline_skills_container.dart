@@ -17,7 +17,7 @@ class OutlineSkillsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final parsedIndex = isMobile ? index : (index * 2) + rowIndex;
-    final colors = ColourAssets.all;
+    final colors = ColorAsset.all;
     return Container(
       width: isMobile ? double.infinity : null,
       padding: EdgeInsets.all(10),

@@ -12,7 +12,7 @@ class Post {
   int? id;
 
   /// URL to the object.
-  //String link;
+  String? link;
 
   /// The date the object was last modified, in the site's timezone.
   // DateTime modified;
@@ -100,7 +100,7 @@ class Post {
     // : null;
     //guid = map['guid'];
     id = map['id'];
-    //link = map['link'];
+    link = map['link'];
     //modified = map["modified"] != null
     //   ? DateTime.parse(map["modified"])
     //  : null;
@@ -191,5 +191,6 @@ class Post {
     this.author = map['author'];
     this.date = map["date"] != null ? DateTime.parse(map["date"]) : null;
     this.featuredMediaUrl = map['featured_media'];
+    this.link = map['link'];
   }
 }
