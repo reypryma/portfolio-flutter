@@ -89,3 +89,35 @@ final skills = [
   'Agile',
   'Scrum',
 ];
+
+final ability = <SkillModel>[
+  SkillModel(name: 'Flutter & Dart'),
+  SkillModel(name: 'PHP/Laravel'),
+  SkillModel(name: 'HTML/CSS'),
+  SkillModel(name: 'Java/Kotlin'),
+  SkillModel(name: 'UI/UX'),
+  SkillModel(name: 'Figma/Adobe XD'),
+  SkillModel(name: 'C & C#'),
+  SkillModel(name: 'Python'),
+  SkillModel(name: 'Javascript'),
+  SkillModel(name: 'WHMCS: Cpanel'),
+  SkillModel(name: 'Video Editing'),
+  SkillModel(name: 'React'),
+  SkillModel(name: 'Node.js'),
+  SkillModel(name: 'DB: MySQL, SQL Server, Oracle'),
+];
+
+class SkillModel{
+  String name;
+  String? subtitle;
+  bool isChecked;
+  int? experienced;
+  Widget? widget;
+  int? experience;
+  int? project;
+  Color? color;
+  Icon? icon;
+
+  SkillModel({required this.name, this.subtitle, this.isChecked = false, this.widget,
+    this.experience, this.project, this.color, this.icon, this.experienced});
+}
