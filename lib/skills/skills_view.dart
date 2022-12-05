@@ -5,16 +5,13 @@ import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
 import 'package:portfolio_flutter_web/skills/outline_skills_container.dart';
-import 'package:portfolio_flutter_web/skills/sample.dart';
-
-import '../config.dart';
-import '../utils/colour_assets.dart';
+import 'package:portfolio_flutter_web/utils/colour_assets.dart';
 
 class SkillsView extends StatelessWidget {
   const SkillsView({
     required Key key,
   }) : super(key: key);
-  static const title = 'Skills';
+  static const title = 'Know';
 
   @override
   Widget build(BuildContext context) {
@@ -37,30 +34,77 @@ class SkillsDesktopView extends StatefulWidget {
 }
 
 class _SkillsDesktopViewState extends State<SkillsDesktopView> {
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  void init() async {
+    //setStatusBarColor(primaryColor);
+  }
+
+  @override
+  void setState(fn) {
+    if (mounted) super.setState(fn);
+  }
+
   @override
   Widget build(BuildContext context) {
     final skills = abilities;
-    return DesktopViewBuilder(
-      titleText: SkillsView.title,
-      children: List.generate(
-          skills.length,
-          (index) => AnimationConfiguration.staggeredList(
-                position: index,
-                child: SlideAnimation(
-                  horizontalOffset: 50.0,
-                  child: FadeInAnimation(
-                    child: GestureDetector(
-                      onTap: () {
-
-                      },
-                      child: Row(
-
-                      )
+    return DesktopViewBuilder(titleText: SkillsView.title, children: [
+      AnimationLimiter(
+          child: Wrap(
+            spacing: 8,
+            runSpacing: 4,
+        children: List.generate(
+            skills.length,
+            (index) => AnimationConfiguration.staggeredList(
+                  position: index,
+                  duration: Duration(milliseconds: 600),
+                  delay: Duration(milliseconds: 2000),
+                  child: SlideAnimation(
+                    duration: Duration(milliseconds: 600),
+                    horizontalOffset: 50.0,
+                    child: FadeInAnimation(
+                      duration: Duration(milliseconds: 500),
+                      child: GestureDetector(
+                          onTap: () {},
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                                width: context.width() * 0.2 - 24,
+                                decoration: boxDecorationWithRoundedCorners(
+                                  borderRadius: radius(8), border: Border.all(width: 0.1),
+                                    backgroundColor: skills[index].isChecked == true ? ColorAsset.colorRandomColor() : Colors.black.withOpacity(0.5)
+                                ),
+                                child: Text(skills[index].name, maxLines: 2, style: boldTextStyle(color: skills[index].isChecked ? black : white),),
+                              ).onTap((){
+                                skills[index].isChecked = !skills[index].isChecked!;
+                                setState(() {});
+                                print("${skills[index].isChecked}");
+                                toast('${skills[index].subtitle}', );
+                              }),
+                              skills[index].isChecked == true
+                                  ? Positioned(
+                                left: 16,
+                                    child: Icon(
+                                Icons.check_circle,
+                                color: ColorAsset.HueYellow,
+                              ).paddingAll(4),
+                                  )
+                                  : SizedBox()
+                            ],
+                          )),
                     ),
                   ),
-                ),
-              )),
-    );
+                )),
+      ))
+    ]);
   }
 }
 
@@ -147,7 +191,7 @@ class SkillModel {
   String name;
   String? subtitle;
   bool isChecked;
-  int? experienced;
+  bool? experienced;
   Widget? widget;
   int? experience;
   int? project;
