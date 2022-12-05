@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
-import 'package:portfolio_flutter_web/project/project_item_body.dart';
+import 'package:portfolio_flutter_web/menus/project/project_item_body.dart';
 
 class ProjectItem {
   final String image;

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/constants.dart';
-import 'package:portfolio_flutter_web/portfolio/portfolio_view.dart';
+import 'package:portfolio_flutter_web/menus/portfolio/portfolio_view.dart';
 import 'package:provider/provider.dart';
+
+import '../config.dart';
 
 class NavigationBarView extends StatelessWidget {
   @override
@@ -30,8 +32,8 @@ class NavigationDesktopView extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            'images/navbar_logo.png',
-            height: 30,
+            logoNav,
+            // height: 30,
           ),
           Spacer(),
           for (var item in navigationItems)
@@ -64,9 +66,9 @@ class NavigationMobileView extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(width: 20),
-          Image.asset(
-            'images/navbar_logo.png',
-            height: 24,
+          TextButton(
+            onPressed: () => {},
+            child: Text('Flutter Portfolio 0.1', style: TextStyle(color: Colors.black.withOpacity(0.4))),
           ),
           Spacer(),
           IconButton(

@@ -3,6 +3,8 @@ import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dar
 import 'package:portfolio_flutter_web/constants.dart';
 import 'package:portfolio_flutter_web/header/header_body.dart';
 
+import '../config.dart';
+
 class HeaderView extends StatelessWidget {
   const HeaderView({
     Key? key,
@@ -38,7 +40,7 @@ class HeaderDesktopView extends StatelessWidget {
               child: HeaderBody(),
             ),
             Image.asset(
-              'images/header.png',
+              heroImg,
               height: isSmall ? imageWidth : 500,
             )
           ],
@@ -63,7 +65,7 @@ class HeaderMobileView extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
       child: Column(
         children: [
-          Expanded(child: Image.asset('images/header.png')),
+          Expanded(child: Image.asset(heroImg)),
           HeaderBody(isMobile: true),
         ],
       ),

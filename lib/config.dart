@@ -12,6 +12,8 @@ final String mainApiUrl = "$urWebsiteUrl/wp-json";
 final double barIconSize = 40.0;
 final String connectionProblemError = ' Internet Connection Problem ';
 final authorImage = "images/bpfull.jpg";
+final heroImg = "images/devheroimg.png";
+final logoNav = "images/portf.png";
 
 
 /*

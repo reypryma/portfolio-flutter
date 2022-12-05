@@ -1,21 +1,20 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/blog/blog_view.dart';
 import 'package:portfolio_flutter_web/drawer/drawer_view.dart';
-import 'package:portfolio_flutter_web/experience/experience_view.dart';
 import 'package:portfolio_flutter_web/footer/footer_view.dart';
 import 'package:portfolio_flutter_web/header/header_view.dart';
+import 'package:portfolio_flutter_web/menus/experience/experience_view.dart';
+import 'package:portfolio_flutter_web/menus/project/project_view.dart';
 import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
-import 'package:portfolio_flutter_web/portfolio/back_to_top_button.dart';
-import 'package:portfolio_flutter_web/project/project_view.dart';
 import 'package:portfolio_flutter_web/skills/skills_view.dart';
 import 'package:provider/provider.dart';
 
 import '../wordpress/article_view.dart';
+import 'back_to_top_button.dart';
 
 class PortfolioView extends StatefulWidget {
   const PortfolioView({
-     Key? key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -32,6 +31,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
   final ScrollController scrollController = ScrollController(
     initialScrollOffset: 0,
   );
+
   @override
   void afterFirstLayout(BuildContext context) {
     setState(() {
@@ -85,6 +85,7 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
 class NavigationItem {
   final String text;
   final GlobalKey key;
+
   NavigationItem(
     this.text, {
     required this.key,
@@ -94,8 +95,8 @@ class NavigationItem {
 }
 
 double _getPosition(GlobalKey key) {
-
-  final RenderBox containerRenderBox = key.currentContext!.findRenderObject() as RenderBox;
+  final RenderBox containerRenderBox =
+      key.currentContext!.findRenderObject() as RenderBox;
   final position = containerRenderBox.localToGlobal(Offset.zero);
   return position.dy;
 }

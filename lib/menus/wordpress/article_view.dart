@@ -2,19 +2,18 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:nb_utils/nb_utils.dart';
-import 'package:portfolio_flutter_web/blog/blog_card.dart';
 import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
+import 'package:portfolio_flutter_web/config.dart';
 import 'package:portfolio_flutter_web/constants.dart';
+import 'package:portfolio_flutter_web/menus/blog/blog_card.dart';
+import 'package:portfolio_flutter_web/models/post.dart';
+import 'package:portfolio_flutter_web/services/wordpress_api.dart';
 import 'package:portfolio_flutter_web/utils/colour_assets.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import '../config.dart';
-import '../models/post.dart';
-import '../services/wordpress_api.dart';
 
 final String _baseUrl = mainApiUrl;
 WordpressClient client = new WordpressClient(_baseUrl, http.Client());

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/project/project_view.dart';
+import 'package:portfolio_flutter_web/menus/project/project_view.dart';
 
 class ProjectItemBody extends StatelessWidget {
   const ProjectItemBody({
