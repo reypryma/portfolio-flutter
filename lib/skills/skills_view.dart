@@ -5,13 +5,14 @@ import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
 import 'package:portfolio_flutter_web/skills/outline_skills_container.dart';
+import 'package:portfolio_flutter_web/skills/skills_mobile_widget.dart';
 import 'package:portfolio_flutter_web/utils/colour_assets.dart';
 
 class SkillsView extends StatelessWidget {
   const SkillsView({
     required Key key,
   }) : super(key: key);
-  static const title = 'Know';
+  static const title = 'Knows';
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,6 @@ class SkillsDesktopView extends StatefulWidget {
 }
 
 class _SkillsDesktopViewState extends State<SkillsDesktopView> {
-
   @override
   void initState() {
     super.initState();
@@ -56,8 +56,8 @@ class _SkillsDesktopViewState extends State<SkillsDesktopView> {
     return DesktopViewBuilder(titleText: SkillsView.title, children: [
       AnimationLimiter(
           child: Wrap(
-            spacing: 8,
-            runSpacing: 4,
+        spacing: 8,
+        runSpacing: 4,
         children: List.generate(
             skills.length,
             (index) => AnimationConfiguration.staggeredList(
@@ -76,27 +76,41 @@ class _SkillsDesktopViewState extends State<SkillsDesktopView> {
                             children: [
                               Container(
                                 alignment: Alignment.center,
-                                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 8, vertical: 8),
                                 width: context.width() * 0.2 - 24,
                                 decoration: boxDecorationWithRoundedCorners(
-                                  borderRadius: radius(8), border: Border.all(width: 0.1),
-                                    backgroundColor: skills[index].isChecked == true ? ColorAsset.colorRandomColor() : Colors.black.withOpacity(0.5)
+                                    borderRadius: radius(8),
+                                    border: Border.all(width: 0.1),
+                                    backgroundColor:
+                                        skills[index].isChecked == true
+                                            ? ColorAsset.colorRandomColor()
+                                            : Colors.black.withOpacity(0.5)),
+                                child: Text(
+                                  skills[index].name,
+                                  maxLines: 2,
+                                  style: boldTextStyle(
+                                      color: skills[index].isChecked
+                                          ? black
+                                          : white),
                                 ),
-                                child: Text(skills[index].name, maxLines: 2, style: boldTextStyle(color: skills[index].isChecked ? black : white),),
-                              ).onTap((){
-                                skills[index].isChecked = !skills[index].isChecked!;
+                              ).onTap(() {
+                                skills[index].isChecked =
+                                    !skills[index].isChecked!;
                                 setState(() {});
                                 print("${skills[index].isChecked}");
-                                toast('${skills[index].subtitle}', );
+                                toast(
+                                  '${skills[index].subtitle}',
+                                );
                               }),
                               skills[index].isChecked == true
                                   ? Positioned(
-                                left: 16,
-                                    child: Icon(
-                                Icons.check_circle,
-                                color: ColorAsset.HueYellow,
-                              ).paddingAll(4),
-                                  )
+                                      left: 16,
+                                      child: Icon(
+                                        Icons.check_circle,
+                                        color: ColorAsset.HueYellow,
+                                      ).paddingAll(4),
+                                    )
                                   : SizedBox()
                             ],
                           )),
@@ -135,19 +149,9 @@ class SkillsMobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MobileViewBuilder(
-      titleText: SkillsView.title,
-      children: [
-        for (var index = 0; index < skills.length; index++) ...[
-          OutlineSkillsContainer(
-            index: index,
-            rowIndex: 1,
-            isMobile: true,
-          ),
-          SizedBox(height: 10)
-        ]
-      ],
-    );
+    return MobileViewBuilder(titleText: SkillsView.title, children: [
+      SkillListCheckWidget()
+    ]);
   }
 }
 

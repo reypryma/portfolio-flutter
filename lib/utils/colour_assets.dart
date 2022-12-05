@@ -17,7 +17,7 @@ class ColorAsset {
   static const HueDark = Color(0xFF343434);
   static const HueRed = Color(0xFFd74725);
   static const HueYellow = Color(0xFFfab201);
-
+  static const HueBlue = Color(0xFF3256A2);
 
   static colorRandomColor() {
     Random _random = Random();

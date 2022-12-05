@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
@@ -26,11 +27,18 @@ class FooterDesktopView extends StatelessWidget {
       padding: kScreenPadding,
       child: Row(
         children: [
-          Text('© <insert your name> $currentYear -- '),
+          Text('© <Yoga> $currentYear -- '),
           InkWell(
-            child: Text(
-              'See the source code',
-              style: TextStyle(decoration: TextDecoration.underline),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(LineIcons.github_square),
+                8.width,
+                Text(
+                  'See the source code',
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
+              ],
             ),
             mouseCursor: MaterialStateMouseCursor.clickable,
             splashColor: Colors.transparent,
@@ -81,7 +89,7 @@ class FooterMobileView extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20),
-          Text('© <insert your name> $currentYear'),
+          Text('© <Yoga> $currentYear'),
           SizedBox(height: 20),
           InkWell(
             child: Text(
