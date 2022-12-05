@@ -20,9 +20,14 @@ final String _baseUrl = mainApiUrl;
 WordpressClient client = new WordpressClient(_baseUrl, http.Client());
 
 Future<List<Post>> getMyArticles() async {
-  var fetchArticles = await client.listPosts(page: 1, perPage: 4);
-  List<Post> posts = fetchArticles;
-  return posts;
+  try{
+    var fetchArticles = await client.listPosts(page: 1, perPage: 4);
+    List<Post> posts = fetchArticles;
+    return posts;
+  }catch(e){
+    print(e);
+    return [];
+  }
 }
 
 class ArticleContainer extends StatelessWidget {
@@ -36,7 +41,10 @@ class ArticleContainer extends StatelessWidget {
         initialData: [],
         child: MobileDesktopViewBuilder(
             mobileView: ArticleMobileView(),
-            desktopView: ArticleDesktopView()));
+            desktopView: ArticleDesktopView()
+
+        )
+    );
   }
 }
 
@@ -73,7 +81,7 @@ class _ArticleMobileViewState extends State<ArticleMobileView> {
   Widget build(BuildContext context) {
     List<Post> articles = context.watch<List<Post>>();
 
-    if (articles.isEmpty) return CircularProgressIndicator();
+    if (articles == null) return CircularProgressIndicator();
 
     return MobileViewBuilder(
       titleText: ArticleContainer.title,
@@ -167,7 +175,7 @@ class ArticleDesktopViewState extends State<ArticleDesktopView>
   @override
   Widget build(BuildContext context) {
     final articles = context.watch<List<Post>>();
-    if (articles == null) return CircularProgressIndicator();
+    if (articles.isEmpty) return CircularProgressIndicator();
     return DesktopViewBuilder(titleText: ArticleContainer.title, children: [
       Container(
         // height: context.height(),
