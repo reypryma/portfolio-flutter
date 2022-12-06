@@ -16,6 +16,13 @@ final heroImg = "images/devheroimg.png";
 final logoNav = "images/portf.png";
 
 
+class ImageProjects{
+  static const kelolaku = "projects/1.png";
+  static const nakoInfo = "projects/2.png";
+  static const antrianSehat = "projects/3.png";
+  static const simplePOS = "projects/4.png";
+}
+
 /*
 Color svGetBodyColor() {
   if (appStore.isDarkModeOn)
@@ -35,3 +42,4 @@ Gradient defaultThemeGradient() {
     end: Alignment.bottomLeft,
   );
 }
+

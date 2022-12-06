@@ -69,39 +69,39 @@ class ExperienceInfo {
 
 final experiences = [
   ExperienceInfo(
-    company: 'Software Developer @ PSLOVE (Start Up)',
-    timeline: 'June 2018 - September 2019 (16 months)',
+    company: 'Software Developer @ Antrian Sehat',
+    timeline: '2020',
     descriptions: [
-      '- Created the period tracker app with Flutter from inception to 30,000 downloads',
-      '- Maintained backend services using Firebase in TypeScript',
-      '- Worked in a team of 3 developers',
+      '- Concepting UI / UX of Antrian Sehat',
+      '- Responsible for making sure Desktop App Works',
+      '- Also help in development in different frameworks \n i.e. Web and Backend',
     ],
   ),
   ExperienceInfo(
-    company: 'Intern @ TinkerTanker (Education Tech)',
-    timeline: 'January 2018 - May 2018 (5 months)',
+    company: 'Intern @ PT. Kita Bisa Teknologi',
+    timeline: '2021',
     descriptions: [
-      '- Taught over 300 students in over 5 schools',
+      '- Developing UI/UX using Adobe XD',
       '- Taught Game Development in Unity/C#, assisted in Data Science Course in Python',
       '- Assisted in developing Blockchain curriculum in Javascript',
     ],
   ),
   ExperienceInfo(
-    company: 'Full Stack Web Developement Coding Bootcamp @ AlphaCamp',
-    timeline: 'August 2017 - October 2017 (3 months)',
+    company: 'Managing Education Web @ Personal Blog',
+    timeline: 'sunaonako.my.id | 2022',
     descriptions: [
-      '- Built 5 projects in Ruby in Rails such as Twitter clone, Food Review website',
-      '- Learnt HTML, CSS, Ruby, Ruby on Rails, JQuery, Javascript ',
-      '- Led a team of 3 developers in final project',
+      '- Developing Application using Wordpress as Headless CMS',
+      '- Learnt HTML, CSS, PHP, and Wordpress Framework ',
+      '- Accepted to Adsense Monetization Program in less than 1 day \n after submission',
     ],
   ),
   ExperienceInfo(
-    company: 'Coding Instructor Volunteer @ Code in the Community',
-    timeline: 'April 2018 - January 2020 (21 months)',
+    company: 'Developing UX and interface Kelolaku using Five Planes Method',
+    timeline: '2022',
     descriptions: [
-      '- Taught over 30 students in Python and Scratch programming',
-      '- Mentored over 10 volunteers in teaching and coaching young students',
-      '- Featured on local news on volunteering experience',
+      '- Abstract Idea to Prototype Store Management with Five Planes Method',
+      '- Do Usability Testing for Evaluating Product',
+      '- Developing Flutter Application of Kelolaku',
     ],
   ),
 ];

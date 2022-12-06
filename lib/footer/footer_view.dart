@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/constants.dart';
 import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FooterView extends StatelessWidget {
   @override
@@ -35,12 +34,13 @@ class FooterDesktopView extends StatelessWidget {
                 Icon(LineIcons.github_square),
                 8.width,
                 Container(
-                  child: Text(
-                    'See the source code',
-                    style: TextStyle(decoration: TextDecoration.underline),
-                  )).onTap(() {
-                  launch('https://s.sunaonako.my.id/resume');
-                },
+                    child: Text(
+                  'See the source code',
+                  style: TextStyle(decoration: TextDecoration.underline),
+                )).onTap(
+                  () {
+                    launch('https://s.sunaonako.my.id/resume');
+                  },
                 ),
               ],
             ),
@@ -104,7 +104,9 @@ class FooterMobileView extends StatelessWidget {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
-            onTap: () => launch('https://github.com'),
+            onTap: () {
+              launch('https://s.sunaonako.my.id/resume');
+            },
           ),
         ],
       ),
@@ -115,6 +117,7 @@ class FooterMobileView extends StatelessWidget {
 class SocialInfo {
   final Widget icon;
   final String url;
+
   SocialInfo({
     required this.icon,
     required this.url,
