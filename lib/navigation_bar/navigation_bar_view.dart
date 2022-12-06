@@ -31,7 +31,7 @@ class NavigationDesktopView extends StatelessWidget {
       width: 1507,
       padding: kScreenPadding,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
             logoNav,

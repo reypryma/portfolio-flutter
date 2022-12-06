@@ -44,10 +44,12 @@ dependencies:
   nb_utils: ^4.6.25
   flutter_html: ^2.2.1
   http: ^0.13.5
+  url_strategy: ^0.2.0
 
 dev_dependencies:
   json_serializable: ^6.5.4
   flutter_launcher_icons: ^0.11.0
+
 
 flutter_icons:
 #  android: "r_ico"
