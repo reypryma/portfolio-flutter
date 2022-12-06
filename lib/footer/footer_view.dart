@@ -37,7 +37,7 @@ class FooterDesktopView extends StatelessWidget {
                 8.width,
                 Container(
                     child: Text(
-                  'See the source code',
+                  'Created Using Flutter, See the source',
                   style: TextStyle(decoration: TextDecoration.underline),
                 )).onTap(
                   () {
