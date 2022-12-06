@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:portfolio_flutter_web/utils/colour_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webfeed/domain/rss_item.dart';
@@ -32,7 +33,7 @@ class BlogCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              color: Colors.redAccent,
+              color: ColorAsset.redAccent,
               width: double.infinity,
               padding: EdgeInsets.symmetric(
                 horizontal: 8,

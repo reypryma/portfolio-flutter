@@ -6,6 +6,8 @@ import 'package:portfolio_flutter_web/constants.dart';
 import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../utils/colour_assets.dart';
+
 class FooterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -48,14 +50,14 @@ class FooterDesktopView extends StatelessWidget {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
-            onTap: () => launch('https://github.com'),
+            onTap: () => launch('https://github.com/reypryma'),
           ),
           Spacer(),
           for (final social in socials)
             IconButton(
               icon: social.icon,
               onPressed: () => launch(social.url),
-              color: Colors.redAccent,
+              color: ColorAsset.redAccent,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
@@ -85,7 +87,7 @@ class FooterMobileView extends StatelessWidget {
                 IconButton(
                   icon: social.icon,
                   onPressed: () => launch(social.url),
-                  color: Colors.redAccent,
+                  color: ColorAsset.redAccent,
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,

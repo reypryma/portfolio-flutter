@@ -8,6 +8,8 @@ import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+import '../utils/colour_assets.dart';
+
 class HeaderBody extends StatelessWidget {
   final bool? isMobile;
   const HeaderBody({
@@ -39,11 +41,11 @@ class HeaderBody extends StatelessWidget {
         SizedBox(height: isMobile ?? false ? 16 : 32),
         TextButton(
           style: TextButton.styleFrom(
-            backgroundColor: Colors.redAccent,
+            backgroundColor: ColorAsset.redAccent,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
           ),
 
-          // color: Colors.redAccent,
+          // color: ColorAsset.redAccent,
           onPressed: () =>
               launch(('mailto:refano@sunaonako.my.id?subject=Challenge%20Opportunity&body=Wahalo!')),
           child: Padding(

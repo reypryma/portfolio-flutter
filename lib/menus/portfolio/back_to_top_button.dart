@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter_web/utils/colour_assets.dart';
 import 'package:provider/provider.dart';
 
 class BackToTopButton extends StatelessWidget {
@@ -11,7 +12,7 @@ class BackToTopButton extends StatelessWidget {
     final scrollController = context.watch<ScrollController>();
     if (scrollController.isOffsetZero) return SizedBox();
     return FloatingActionButton(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: ColorAsset.redAccent,
       child: Icon(Icons.arrow_upward),
       onPressed: () {
         scrollController.animateTo(
