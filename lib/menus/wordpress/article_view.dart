@@ -246,9 +246,11 @@ class ArticleDesktopViewState extends State<ArticleDesktopView>
                         ],
                       ),
                       16.height,
-                      Text(
+                      AutoSizeText(
                         "${(articles[index].title)!}",
-                        style: boldTextStyle(size: 18),
+                        style: boldTextStyle(),
+                        maxFontSize: 17,
+                        minFontSize: 14,
                       ),
                       16.height,
                       commonCacheImageWidget(

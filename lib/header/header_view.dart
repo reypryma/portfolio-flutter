@@ -35,10 +35,10 @@ class HeaderDesktopView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: HeaderBody(),
-            ),
+            Expanded(child: HeaderBody()),
             Image.asset(
               heroImg,
               height: isSmall ? imageWidth : 500,
@@ -60,14 +60,17 @@ class HeaderMobileView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Container(
-      height: height * 0.9,
+      height: height * .9,
       width: width,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-      child: Column(
-        children: [
-          Expanded(child: Image.asset(heroImg)),
-          HeaderBody(isMobile: true),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(child: Image.asset(heroImg)),
+            HeaderBody(isMobile: true),
+          ],
+        ),
       ),
     );
   }

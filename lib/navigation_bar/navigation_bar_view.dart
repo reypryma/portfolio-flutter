@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio_flutter_web/constants.dart';
@@ -26,27 +27,32 @@ class NavigationDesktopView extends StatelessWidget {
     final navigationItems = context.watch<List<NavigationItem>>();
     final scrollController = context.watch<ScrollController>();
     return Container(
-      height: 100,
+      height: 80,
       width: 1507,
       padding: kScreenPadding,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Image.asset(
             logoNav,
-            // height: 30,
+            height: 25,
           ),
-          Spacer(),
-          for (var item in navigationItems)
-            NavigationBarItem(
-              onPressed: () {
-                scrollController.animateTo(
-                  item.position,
-                  duration: Duration(milliseconds: 700),
-                  curve: Curves.easeInOut,
-                );
-              },
-              text: item.text,
-            ),
+          // Spacer(),
+          Row(
+            children: [
+              for (var item in navigationItems)
+                NavigationBarItem(
+                  onPressed: () {
+                    scrollController.animateTo(
+                      item.position,
+                      duration: Duration(milliseconds: 700),
+                      curve: Curves.easeInOut,
+                    );
+                  },
+                  text: item.text,
+                ),
+            ],
+          ),
         ],
       ),
     );
@@ -68,7 +74,7 @@ class NavigationMobileView extends StatelessWidget {
           SizedBox(width: 20),
           TextButton(
             onPressed: () => {},
-            child: Text('Flutter Portfolio 0.1', style: TextStyle(color: Colors.black.withOpacity(0.4))),
+            child: AutoSizeText('Flutter Portfolio 0.1.1', style: TextStyle(color: Colors.black.withOpacity(0.4))),
           ),
           Spacer(),
           IconButton(
@@ -95,7 +101,7 @@ class NavigationBarItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final isSmall = MediaQuery.of(context).size.width < 650;
     return Container(
-      padding: const EdgeInsets.only(left: 64),
+      padding: const EdgeInsets.only(left: 48),
       child: InkWell(
         mouseCursor: MaterialStateMouseCursor.clickable,
         highlightColor: Colors.transparent,

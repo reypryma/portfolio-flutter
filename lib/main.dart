@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_flutter_web/menus/loading_screen.dart';
 
 import 'menus/portfolio/portfolio_view.dart';
 
@@ -24,9 +25,13 @@ class MyApp extends StatelessWidget {
             fontSize: 30,
             color: Colors.black,
           ),
+          subtitle1: GoogleFonts.antonio(
+            color: Colors.white,
+            fontSize: 34
+          )
         ),
       ),
-      home: PortfolioView(),
+      home: LoadingScreen(),
     );
   }
 }

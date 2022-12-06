@@ -34,9 +34,13 @@ class FooterDesktopView extends StatelessWidget {
               children: [
                 Icon(LineIcons.github_square),
                 8.width,
-                Text(
-                  'See the source code',
-                  style: TextStyle(decoration: TextDecoration.underline),
+                Container(
+                  child: Text(
+                    'See the source code',
+                    style: TextStyle(decoration: TextDecoration.underline),
+                  )).onTap(() {
+                  launch('https://s.sunaonako.my.id/resume');
+                },
                 ),
               ],
             ),
