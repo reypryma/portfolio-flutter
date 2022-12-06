@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
-import 'package:portfolio_flutter_web/config.dart';
-import 'package:portfolio_flutter_web/menus/project/project_item_body.dart';
+import 'package:portfolio/components/desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_view_builder.dart';
+import 'package:portfolio/config.dart';
+import 'package:portfolio/menus/project/project_item_body.dart';
 
 class ProjectItem {
   final String image;
@@ -23,7 +23,7 @@ final kProjectItems = [
     image: ImageProjects.kelolaku,
     title: 'Kelolaku Store Management Apps',
     description:
-        'Kelolaku Store Management App: UI Documentation and Guideline of Kelolaku Store Apps, Developing Mobile App using Flutter',
+        'Kelolaku Store Management App: UI Documentation and Desiggn System Guideline of Kelolaku Store Apps, Developing Mobile App using Flutter',
     technologies: [
       'Flutter',
       'onesignal',
@@ -34,7 +34,7 @@ final kProjectItems = [
     image: ImageProjects.antrianSehat,
     title: 'Antrian Sehat',
     description:
-        'Antrian Sehat: Internet, Desktop, and Mobile Application efficient in managing Queueing and Reservation System in the wellness treatment.',
+        'Antrian Sehat: Web, Desktop, and Mobile Application efficient in managing Queueing and Reservation System of hospital.',
     technologies: [
       'React',
       'Java',

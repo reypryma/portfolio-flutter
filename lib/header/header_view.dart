@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/constants.dart';
-import 'package:portfolio_flutter_web/header/header_body.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/constants.dart';
+import 'package:portfolio/header/header_body.dart';
 
 import '../config.dart';
 

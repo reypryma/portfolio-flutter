@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/skills/skills_view.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/skills/skills_view.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 class OutlineSkillsContainer extends StatelessWidget {
   const OutlineSkillsContainer({

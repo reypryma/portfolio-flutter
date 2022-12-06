@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:webfeed/domain/rss_item.dart';
-import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
+import 'package:portfolio/utils/hover_extensions.dart';
 
 import '../experience/experience_container.dart';
 

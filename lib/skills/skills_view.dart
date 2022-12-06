@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
-import 'package:portfolio_flutter_web/skills/outline_skills_container.dart';
-import 'package:portfolio_flutter_web/skills/skills_mobile_widget.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/components/desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_view_builder.dart';
+import 'package:portfolio/skills/outline_skills_container.dart';
+import 'package:portfolio/skills/skills_mobile_widget.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 class SkillsView extends StatelessWidget {
   const SkillsView({

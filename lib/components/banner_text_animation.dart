@@ -2,7 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 class BannerTextAnimation extends StatelessWidget {
   const BannerTextAnimation({Key? key, required this.isMobile}) : super(key: key);

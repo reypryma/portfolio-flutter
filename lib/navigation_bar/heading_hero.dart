@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 
 class FlutterCodeText extends StatelessWidget {

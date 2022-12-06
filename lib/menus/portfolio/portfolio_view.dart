@@ -1,12 +1,12 @@
 import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/drawer/drawer_view.dart';
-import 'package:portfolio_flutter_web/footer/footer_view.dart';
-import 'package:portfolio_flutter_web/header/header_view.dart';
-import 'package:portfolio_flutter_web/menus/experience/experience_view.dart';
-import 'package:portfolio_flutter_web/menus/project/project_view.dart';
-import 'package:portfolio_flutter_web/navigation_bar/navigation_bar_view.dart';
-import 'package:portfolio_flutter_web/skills/skills_view.dart';
+import 'package:portfolio/drawer/drawer_view.dart';
+import 'package:portfolio/footer/footer_view.dart';
+import 'package:portfolio/header/header_view.dart';
+import 'package:portfolio/menus/experience/experience_view.dart';
+import 'package:portfolio/menus/project/project_view.dart';
+import 'package:portfolio/navigation_bar/navigation_bar_view.dart';
+import 'package:portfolio/skills/skills_view.dart';
 import 'package:provider/provider.dart';
 
 import '../wordpress/article_view.dart';

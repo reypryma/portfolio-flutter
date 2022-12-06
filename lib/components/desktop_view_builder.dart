@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/constants.dart';
+import 'package:portfolio/constants.dart';
 
 class DesktopViewBuilder extends StatelessWidget {
   final String titleText;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:portfolio_flutter_web/menus/portfolio/portfolio_view.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/menus/portfolio/portfolio_view.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Repryma",
+              "Repry Ma",
               style: Theme.of(context).textTheme.subtitle1,
             ),
             SizedBox(height: 24),

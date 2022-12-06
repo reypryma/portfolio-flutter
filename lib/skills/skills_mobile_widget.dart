@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:portfolio_flutter_web/skills/skills_view.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/skills/skills_view.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 class SkillListCheckWidget extends StatefulWidget {
   const SkillListCheckWidget({Key? key}) : super(key: key);

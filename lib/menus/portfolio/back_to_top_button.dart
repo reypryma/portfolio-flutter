@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 import 'package:provider/provider.dart';
 
 class BackToTopButton extends StatelessWidget {

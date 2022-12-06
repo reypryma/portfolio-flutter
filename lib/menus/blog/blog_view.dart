@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
+import 'package:portfolio/components/desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_view_builder.dart';
 import 'package:provider/provider.dart';
 import 'package:webfeed/webfeed.dart';
 

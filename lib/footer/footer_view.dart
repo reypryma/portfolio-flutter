@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/constants.dart';
-import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/constants.dart';
+import 'package:portfolio/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/colour_assets.dart';
@@ -28,7 +28,7 @@ class FooterDesktopView extends StatelessWidget {
       padding: kScreenPadding,
       child: Row(
         children: [
-          Text('© <Yoga> $currentYear -- '),
+          Text('© <RePry Ma> $currentYear -- '),
           InkWell(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

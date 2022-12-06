@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/utils/colour_assets.dart';
+import 'package:portfolio/utils/colour_assets.dart';
 
 class ExperienceContainer extends StatelessWidget {
   const ExperienceContainer({
@@ -82,8 +82,7 @@ final experiences = [
     timeline: '2021',
     descriptions: [
       '- Developing UI/UX using Adobe XD',
-      '- Taught Game Development in Unity/C#, assisted in Data Science Course in Python',
-      '- Assisted in developing Blockchain curriculum in Javascript',
+      '- Built Mobile Android using kotlin',
     ],
   ),
   ExperienceInfo(

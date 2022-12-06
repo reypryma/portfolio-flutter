@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:portfolio_flutter_web/components/desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/components/mobile_view_builder.dart';
+import 'package:portfolio/components/desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/components/mobile_view_builder.dart';
 
 import 'experience_container.dart';
 
