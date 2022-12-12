@@ -35,14 +35,14 @@ class NakoThemeNotifier extends ChangeNotifier{
 
   Future<void> updateInStorage(ThemeType themeType) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    sharedPreferences.setString("fx_app_theme_mode", themeType.toText);
+    sharedPreferences.setString("nako_theme_mode", themeType.toText);
     sharedPreferences.setString("theme_mode", themeType.toText);
   }
 
   init() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
 
-    int fxAppThemeMode = sharedPreferences.getInt("fx_app_theme_mode")??ThemeType.light.index;
+    int fxAppThemeMode = sharedPreferences.getInt("nako_theme_mode")??ThemeType.light.index;
     changeAppThemeMode(ThemeType.values[fxAppThemeMode]);
 
     notifyListeners();
@@ -51,7 +51,7 @@ class NakoThemeNotifier extends ChangeNotifier{
   changeAppThemeMode(ThemeType? value) async {
     AppTheme.defaultThemeType = value!;
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.setInt("fx_app_theme_mode", value.index);
+    await sharedPreferences.setInt("nako_theme_mode", value.index);
     log(AppTheme.getThemeFromThemeMode().toString());
     notifyListeners();
   }
