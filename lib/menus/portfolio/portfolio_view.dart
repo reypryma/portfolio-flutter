@@ -7,7 +7,6 @@ import 'package:portfolio/menus/experience/experience_view.dart';
 import 'package:portfolio/menus/project/project_view.dart';
 import 'package:portfolio/navigation_bar/navigation_bar_view.dart';
 import 'package:portfolio/skills/skills_view.dart';
-import 'package:portfolio/themes/app_store.dart';
 import 'package:provider/provider.dart';
 
 import '../wordpress/article_view.dart';

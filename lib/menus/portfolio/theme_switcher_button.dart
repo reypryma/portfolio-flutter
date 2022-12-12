@@ -11,30 +11,50 @@ class ThemeSwitcherButton extends StatefulWidget {
 }
 
 class _ThemeSwitcherButtonState extends State<ThemeSwitcherButton> {
+  late ThemeData theme;
+
+  bool isDark = false;
+
+  void changeTheme() {
+    if (AppTheme.themeType == ThemeType.light) {
+      Provider.of<NakoThemeNotifier>(context, listen: false)
+          .updateTheme(ThemeType.dark);
+    } else {
+      Provider.of<NakoThemeNotifier>(context, listen: false)
+          .updateTheme(ThemeType.light);
+    }
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final themeData = context.watch<NakoThemeNotifier>();
+    // final themeData = context.watch<NakoThemeNotifier>();
+    isDark = AppTheme.themeType == ThemeType.dark;
+    theme = AppTheme.theme;
 
-    return FloatingActionButton.extended(
-        label: Text(
-          "Theme",
-          style: primaryTextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.green,
-        icon: Icon(
-          Icons.wb_sunny_sharp,
-          color: Colors.white,
-        ),
-        onPressed: () {
-          setState(() {
-            if(AppTheme.getThemeFromThemeMode() == ThemeType.light){
-              themeData.changeAppThemeMode(ThemeType.dark);
-            }else{
-              themeData.changeAppThemeMode(ThemeType.light);
+    return Consumer<NakoThemeNotifier>(
+      builder: (BuildContext context, NakoThemeNotifier value, Widget? child) {
+        return FloatingActionButton.extended(
+            label: Text(
+              isDark ? "Dark" : "Light",
+              style: primaryTextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.green,
+            icon: Icon(
+              !isDark ? Icons.wb_sunny_sharp : Icons.mode_night,
+              color: Colors.white,
+            ),
+            onPressed: () {
+                changeTheme();
+              // themeData.changeAppThemeMode(value)
             }
-          });
-          // themeData.changeAppThemeMode(value)
-        });
+            );
+      }
+    );
   }
 }
