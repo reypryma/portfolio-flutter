@@ -30,7 +30,7 @@ class NakoThemeNotifier extends ChangeNotifier{
     // AppTheme.customTheme = AppTheme.getCustomTheme(themeType);
     AppTheme.theme = AppTheme.getTheme(themeType);
     AppTheme.resetThemeData();
-    AppTheme.changeFxTheme(themeType);
+    AppTheme.changeMotherTheme(themeType);
   }
 
   Future<void> updateInStorage(ThemeType themeType) async {
@@ -150,7 +150,7 @@ class AppTheme{
     theme = AppTheme.getThemeFromThemeMode();
   }
 
-  static void changeFxTheme(ThemeType themeType) {
+  static void changeMotherTheme(ThemeType themeType) {
     if (themeType == ThemeType.light) {
       AppTheme.changeThemeType(ThemeType.light);
     } else if (themeType == ThemeType.dark) {
