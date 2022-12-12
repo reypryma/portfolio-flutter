@@ -57,7 +57,6 @@ class _PortfolioViewState extends State<PortfolioView> with AfterLayoutMixin {
         ChangeNotifierProvider<ScrollController>(create: (_) {
           return scrollController;
         }),
-        ChangeNotifierProvider<NakoThemeNotifier>(create: (context) => NakoThemeNotifier())
       ],
       child: Scaffold(
         endDrawer: DrawerView(),
