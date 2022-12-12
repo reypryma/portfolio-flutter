@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio/constants.dart';
+import 'package:portfolio/menus/next_page_example.dart';
 import 'package:portfolio/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -28,7 +29,9 @@ class FooterDesktopView extends StatelessWidget {
       padding: kScreenPadding,
       child: Row(
         children: [
-          Text('© <RePry Ma> $currentYear -- '),
+          InkWell(child: Text('© <RePry Ma> $currentYear -- '), onTap: (){
+            NextPage().launch(context);
+          }),
           InkWell(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -91,7 +94,7 @@ class FooterMobileView extends StatelessWidget {
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
-                )
+                ),
             ],
           ),
           SizedBox(height: 20),

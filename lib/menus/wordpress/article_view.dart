@@ -15,6 +15,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../themes/app_store.dart';
+
 final String _baseUrl = mainApiUrl;
 WordpressClient client = new WordpressClient(_baseUrl, http.Client());
 
@@ -224,7 +226,7 @@ class ArticleDesktopViewState extends State<ArticleDesktopView>
                               12.width,
                               AutoSizeText(
                                 "${(articles[index].author)!.toUpperCase()}",
-                                style: boldTextStyle(),
+                                style: boldTextStyle(color: AppTheme.themeType == ThemeType.light ? darkGoldenRod : lightYellow),
                                 maxFontSize: 24,
                                 minFontSize: 14,
                                 overflow: TextOverflow.clip,
@@ -248,7 +250,7 @@ class ArticleDesktopViewState extends State<ArticleDesktopView>
                       16.height,
                       AutoSizeText(
                         "${(articles[index].title)!}",
-                        style: boldTextStyle(),
+                        style: boldTextStyle(color: AppTheme.themeType == ThemeType.light ? darkGoldenRod : lightYellow),
                         maxFontSize: 17,
                         minFontSize: 14,
                       ),

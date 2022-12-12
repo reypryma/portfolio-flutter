@@ -12,7 +12,7 @@ class BackToTopButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scrollController = context.watch<ScrollController>();
-    if (scrollController.isOffsetZero) return SizedBox();
+    if (scrollController.isOffsetZero) return  ThemeSwitcherButton();
     return Container(
       width: context.width(),
       margin: EdgeInsets.only(left: 16),

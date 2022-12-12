@@ -31,7 +31,7 @@ class HeaderBody extends StatelessWidget {
           overflow: TextOverflow.fade,
         ),
         AutoSizeText(
-          'platform Developer < / >',
+          'platform Learner < / >',
           style: Theme.of(context).textTheme.headline2,
           minFontSize: 14,
           maxLines: 1,
