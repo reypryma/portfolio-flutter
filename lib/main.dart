@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/menus/loading_screen.dart';
 import 'package:portfolio/menus/portfolio/portfolio_view.dart';
 import 'package:portfolio/themes/app_store.dart';
 import 'package:portfolio/themes/nako_theme_data.dart';
@@ -9,7 +10,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
   runApp(ChangeNotifierProvider<NakoThemeNotifier>(
-      create: (context) => NakoThemeNotifier(), child: MyApp()));
+      create: (_) => NakoThemeNotifier(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

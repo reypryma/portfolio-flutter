@@ -64,8 +64,9 @@ class FooterDesktopView extends StatelessWidget {
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
-            ).moveUpOnHover,
-          SizedBox(width: 60),
+            )
+                .moveUpOnHover
+          ,SizedBox(width: 60),
         ],
       ),
     );

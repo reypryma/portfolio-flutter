@@ -14,18 +14,16 @@ class ThemeSwitcherButton extends StatefulWidget {
 class _ThemeSwitcherButtonState extends State<ThemeSwitcherButton> {
   late ThemeData theme;
 
-  bool isDark = false;
-
-  void changeTheme() {
-    if (AppTheme.themeType == ThemeType.light) {
-      Provider.of<NakoThemeNotifier>(context, listen: false)
-          .updateTheme(ThemeType.dark);
-    } else {
-      Provider.of<NakoThemeNotifier>(context, listen: false)
-          .updateTheme(ThemeType.light);
-    }
-    setState(() {});
-  }
+  // void changeTheme() {
+  //   if (AppTheme.themeType == ThemeType.light) {
+  //     Provider.of<NakoThemeNotifier>(context, listen: false)
+  //         .updateTheme(ThemeType.dark);
+  //   } else {
+  //     Provider.of<NakoThemeNotifier>(context, listen: false)
+  //         .updateTheme(ThemeType.light);
+  //   }
+  //   setState(() {});
+  // }
 
   @override
   void initState() {
@@ -34,9 +32,9 @@ class _ThemeSwitcherButtonState extends State<ThemeSwitcherButton> {
 
   @override
   Widget build(BuildContext context) {
-    // final themeData = context.watch<NakoThemeNotifier>();
-    isDark = AppTheme.themeType == ThemeType.dark;
+    var themeProvider = Provider.of<NakoThemeNotifier>(context);
     theme = AppTheme.theme;
+    bool isDark = !themeProvider.isLightTheme;
 
     return Consumer<NakoThemeNotifier>(
       builder: (BuildContext context, NakoThemeNotifier value, Widget? child) {
@@ -51,7 +49,17 @@ class _ThemeSwitcherButtonState extends State<ThemeSwitcherButton> {
               color: Colors.white,
             ),
             onPressed: () {
-                changeTheme();
+                // changeTheme();
+              if (isDark) {
+                themeProvider.setLightMode();
+                isDark = false;
+              }  else{
+                themeProvider.setDarkMode();
+                isDark = true;
+              }
+              setState(() {
+
+              });
               // themeData.changeAppThemeMode(value)
             }
             );

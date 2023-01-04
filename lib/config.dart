@@ -7,8 +7,8 @@ final String urWebsiteUrl = "https://www.sunaonako.my.id";
 final String endpointFetch = 'wp-json/wp/v2';
 //Show how many per_page ?
 final String perPage = "10";
-const String assetPath = "/assets/";
-const String noAssetPath = "";
+const String prodAssetPath = "/assets/";
+const String devAssetPath = "";
 
 /*
 * fail
@@ -23,16 +23,16 @@ const String noAssetPath = "";
 final String mainApiUrl = "$urWebsiteUrl/wp-json";
 final double barIconSize = 40.0;
 final String connectionProblemError = 'Internet Connection Problem ';
-final authorImage = "${assetPath}images/bpfull.jpg";
-final heroImg = "${assetPath}images/devheroimg.png";
-final logoNav = "${assetPath}images/portf.png";
+final authorImage = "${prodAssetPath}images/bpfull.jpg";
+final heroImg = "${prodAssetPath}images/devheroimg.png";
+final logoNav = "${prodAssetPath}images/portf.png";
 
 
 class ImageProjects{
-  static const kelolaku = "${assetPath}projects/1.png";
-  static const nakoInfo =  "${assetPath}projects/2.png";
-  static const antrianSehat = "${assetPath}projects/3.png";
-  static const simplePOS = "${assetPath}projects/4.png";
+  static const kelolaku = "${prodAssetPath}projects/1.png";
+  static const nakoInfo =  "${prodAssetPath}projects/2.png";
+  static const antrianSehat = "${prodAssetPath}projects/3.png";
+  static const simplePOS = "${prodAssetPath}projects/4.png";
 }
 
 /*

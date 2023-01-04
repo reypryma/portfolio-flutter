@@ -1,8 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:portfolio/components/mobile_desktop_view_builder.dart';
 import 'package:portfolio/constants.dart';
 import 'package:portfolio/menus/portfolio/portfolio_view.dart';
+import 'package:portfolio/themes/app_store.dart';
+import 'package:portfolio/themes/nako_theme_data.dart';
 import 'package:provider/provider.dart';
 
 import '../config.dart';
@@ -66,6 +69,8 @@ class NavigationMobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var themeProvider = Provider.of<NakoThemeNotifier>(context);
+
     return Container(
       height: 60,
       width: double.infinity,
@@ -74,7 +79,9 @@ class NavigationMobileView extends StatelessWidget {
           SizedBox(width: 20),
           TextButton(
             onPressed: () => {},
-            child: AutoSizeText('Flutter Portfolio 0.1.1', style: TextStyle(color: Colors.black.withOpacity(0.4))),
+            child: AutoSizeText('Flutter Portfolio 0.1.1', style:
+            themeProvider.isLightTheme?
+              TextStyle(color: Colors.black.withOpacity(0.4)) : TextStyle(color: yellow)),
           ),
           Spacer(),
           IconButton(
@@ -97,11 +104,13 @@ class NavigationBarItem extends StatelessWidget {
   final void Function() onPressed;
   final String text;
 
+
   @override
   Widget build(BuildContext context) {
     final isSmall = MediaQuery.of(context).size.width < 650;
+    final isMedium = 980 < MediaQuery.of(context).size.width && MediaQuery.of(context).size.width >= 650;
     return Container(
-      padding: const EdgeInsets.only(left: 48),
+      padding: isMedium ? EdgeInsets.only(left: 24) : EdgeInsets.only(left: 48),
       child: InkWell(
         mouseCursor: MaterialStateMouseCursor.clickable,
         highlightColor: Colors.transparent,
@@ -111,7 +120,7 @@ class NavigationBarItem extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            fontSize: isSmall ? 17 : 24,
+            fontSize: isSmall ? 17 : isMedium ? 20 : 24,
           ),
         ),
       ),

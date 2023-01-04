@@ -1,12 +1,10 @@
-import 'dart:html';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/banner_text_animation.dart';
 import 'package:portfolio/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+
 
 import '../utils/colour_assets.dart';
 

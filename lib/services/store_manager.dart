@@ -1,7 +1,7 @@
 import 'package:nb_utils/nb_utils.dart';
 
 class StorageManager {
-  static void saveData(String key, dynamic value) async {
+  static Future<String> saveData(String key, dynamic value) async {
     final prefs = await SharedPreferences.getInstance();
     if (value is int) {
       prefs.setInt(key, value);
@@ -12,6 +12,9 @@ class StorageManager {
     } else {
       print("Invalid Type");
     }
+
+    print("You now using ${key.toString()} " + value.toString());
+    return value.toString();
   }
 
   static Future<dynamic> readData(String key) async {
