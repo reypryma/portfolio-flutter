@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/constants.dart';
+import 'package:portfolio/menus/next_page_example.dart';
+import 'package:portfolio/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/constants.dart';
-import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
+import '../utils/colour_assets.dart';
 
 class FooterView extends StatelessWidget {
   @override
@@ -26,29 +29,44 @@ class FooterDesktopView extends StatelessWidget {
       padding: kScreenPadding,
       child: Row(
         children: [
-          Text('© <insert your name> $currentYear -- '),
+          InkWell(child: Text('© <RePry Ma> $currentYear -- '), onTap: (){
+            NextPage().launch(context);
+          }),
           InkWell(
-            child: Text(
-              'See the source code',
-              style: TextStyle(decoration: TextDecoration.underline),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Icon(LineIcons.github_square),
+                8.width,
+                Container(
+                    child: Text(
+                  'Created Using Flutter, See the source',
+                  style: TextStyle(decoration: TextDecoration.underline),
+                )).onTap(
+                  () {
+                    launch('https://s.sunaonako.my.id/resume');
+                  },
+                ),
+              ],
             ),
             mouseCursor: MaterialStateMouseCursor.clickable,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
-            onTap: () => launch('https://github.com'),
+            onTap: () => launch('https://github.com/reypryma'),
           ),
           Spacer(),
           for (final social in socials)
             IconButton(
               icon: social.icon,
               onPressed: () => launch(social.url),
-              color: Colors.redAccent,
+              color: ColorAsset.redAccent,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
               hoverColor: Colors.transparent,
-            ).moveUpOnHover,
-          SizedBox(width: 60),
+            )
+                .moveUpOnHover
+          ,SizedBox(width: 60),
         ],
       ),
     );
@@ -73,15 +91,15 @@ class FooterMobileView extends StatelessWidget {
                 IconButton(
                   icon: social.icon,
                   onPressed: () => launch(social.url),
-                  color: Colors.redAccent,
+                  color: ColorAsset.redAccent,
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   hoverColor: Colors.transparent,
-                )
+                ),
             ],
           ),
           SizedBox(height: 20),
-          Text('© <insert your name> $currentYear'),
+          Text('© <Yoga> $currentYear'),
           SizedBox(height: 20),
           InkWell(
             child: Text(
@@ -92,7 +110,9 @@ class FooterMobileView extends StatelessWidget {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
-            onTap: () => launch('https://github.com'),
+            onTap: () {
+              launch('https://s.sunaonako.my.id/resume');
+            },
           ),
         ],
       ),
@@ -103,6 +123,7 @@ class FooterMobileView extends StatelessWidget {
 class SocialInfo {
   final Widget icon;
   final String url;
+
   SocialInfo({
     required this.icon,
     required this.url,

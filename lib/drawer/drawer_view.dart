@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/components/mobile_desktop_view_builder.dart';
-import 'package:portfolio_flutter_web/portfolio/portfolio_view.dart';
+import 'package:portfolio/components/mobile_desktop_view_builder.dart';
+import 'package:portfolio/menus/portfolio/portfolio_view.dart';
 import 'package:provider/provider.dart';
+
+import '../config.dart';
 
 class DrawerView extends StatelessWidget {
   @override
@@ -32,12 +34,9 @@ class DrawerMobileView extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text('<Insert Your Name>'),
+            child: Text('<Yoga>'),
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.white, Colors.blue],
-                tileMode: TileMode.repeated,
-              ),
+              gradient: defaultThemeGradient()
             ),
           ),
           for (var item in navigationItems)

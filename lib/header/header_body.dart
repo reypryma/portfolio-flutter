@@ -1,10 +1,12 @@
-import 'dart:html';
-
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/utils/hover_extensions.dart';
+import 'package:portfolio/components/banner_text_animation.dart';
+import 'package:portfolio/utils/hover_extensions.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+
+
+import '../utils/colour_assets.dart';
 
 class HeaderBody extends StatelessWidget {
   final bool? isMobile;
@@ -20,34 +22,33 @@ class HeaderBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AutoSizeText(
-          'I\'m a Mobile',
+          'I\'m a Cross',
           style: Theme.of(context).textTheme.headline2,
           maxLines: 1,
+          minFontSize: 14,
+          overflow: TextOverflow.fade,
         ),
         AutoSizeText(
-          'Developer < / >',
+          'platform Learner < / >',
           style: Theme.of(context).textTheme.headline2,
+          minFontSize: 14,
           maxLines: 1,
         ),
-        SizedBox(height: isMobile ?? false ? 20 : 37),
-        AutoSizeText(
-          'I have 2 years of experience in mobile development in building beautiful apps in Android and iOS',
-          style: TextStyle(fontSize: 24),
-          maxLines: 3,
-        ),
-        SizedBox(height: isMobile ?? false ? 20 : 40),
+        SizedBox(height: isMobile ?? false ? 16 : 32),
+        BannerTextAnimation(isMobile: this.isMobile ?? false,),
+        SizedBox(height: isMobile ?? false ? 16 : 32),
         TextButton(
           style: TextButton.styleFrom(
-            backgroundColor: Colors.redAccent,
+            backgroundColor: ColorAsset.redAccent,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
           ),
 
-          // color: Colors.redAccent,
+          // color: ColorAsset.redAccent,
           onPressed: () =>
-              launchUrl(Uri.parse('mailto:smith@example.org?subject=News&body=New%20plugin')),
+              launch(('mailto:refano@sunaonako.my.id?subject=Challenge%20Opportunity&body=Wahalo!')),
           child: Padding(
             padding: EdgeInsets.symmetric(
-              vertical: isMobile ?? false ? 10 : 17,
+              vertical: isMobile ?? false ? 10 : 16,
               horizontal: isMobile ?? false ? 8 : 15,
             ),
             child: Text(

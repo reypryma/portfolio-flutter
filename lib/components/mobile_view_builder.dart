@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter_web/constants.dart';
+import 'package:portfolio/constants.dart';
 
 class MobileViewBuilder extends StatelessWidget {
   final String titleText;

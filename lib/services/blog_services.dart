@@ -1,10 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
-import 'package:wordpress_client/requests.dart';
-import 'package:wordpress_client/responses.dart';
-import 'package:wordpress_client/wordpress_client.dart';
-
 import '../constants.dart';
 
 Future<List<http.Response>> getPosts() async {
@@ -23,50 +19,38 @@ Future<List<http.Response>> getPosts() async {
 }
 
 class BlogService {
-  Future<WordpressResponse<List<Post>?>> getAll() async {
-    WordpressResponse<List<Post>?> postsResponse = await client.posts.list(
-      WordpressRequest(
-        requestData: ListPostRequest()
-          ..page = 1
-          ..perPage = 4
-          ..order = Order.asc,
-      ),
-    );
-    print(postsResponse);
 
-    return postsResponse;
-  }
 }
 
 
 class BlogProvider extends ChangeNotifier {
-  final _service = BlogService();
-  bool isLoading = false;
-  List<Post> _todos = [];
-  List<Post> get todos => _todos;
-
-  Future<void> getAllBlogs() async {
-    isLoading = true;
-    notifyListeners();
-
-    final response = await _service.getAll();
-
-    _todos = response.data!.toList();
-
-    isLoading = false;
-    notifyListeners();
-  }
+  // final _service = BlogService();
+  // bool isLoading = false;
+  // List<Post> _todos = [];
+  // List<Post> get todos => _todos;
+  //
+  // Future<void> getAllBlogs() async {
+  //   isLoading = true;
+  //   notifyListeners();
+  //
+  //   final response = await _service.getAll();
+  //
+  //   _todos = response.data!.toList();
+  //
+  //   isLoading = false;
+  //   notifyListeners();
+  // }
 }
 
-Future<List<Post>?> getFutureWordpressBlog() async {
-
-  final _service = BlogService();
-  final response = await _service.getAll();
-
-  List<Post> _getWordpressPost = response.data!.toList();
-  return _getWordpressPost;
-
-}
+// Future<List<Post>?> getFutureWordpressBlog() async {
+//
+//   final _service = BlogService();
+//   final response = await _service.getAll();
+//
+//   List<Post> _getWordpressPost = response.data!.toList();
+//   return _getWordpressPost;
+//
+// }
 
 /*
 Future<List<RssItem>?> getArticles() async {

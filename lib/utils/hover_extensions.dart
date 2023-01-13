@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
-import 'package:portfolio_flutter_web/components/elevate_on_hover.dart';
+import 'package:portfolio/components/elevate_on_hover.dart';
+
+import 'device_helper.dart';
 
 extension HoverExtension on Widget {
-  static final appContainer =
-      html.window.document.getElementById('app-container');
+
+  static final appContainer = DeviceHelper.isWeb() ? html.window.document.getElementById('app-container') : null;
+
 
   Widget get moveUpOnHover {
     return ElevateOnHover(child: this);
